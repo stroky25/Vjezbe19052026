@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -13,8 +15,11 @@ public class Main {
         pravokutnik1.setStranica2(40);
 
         trokut1.prikazPodatakaTrokut();
+        System.out.println(trokut1.prikazPodatakaTrokut());
         krug1.prikazPodatakaKrug();
+        System.out.println(krug1.prikazPodatakaKrug());
         pravokutnik1.prikazPodatakaPravokutnik();
+        System.out.println(pravokutnik1.prikazPodatakaPravokutnik());
 
     }
 }
