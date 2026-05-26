@@ -1,33 +1,24 @@
-public class Krug {
-    private String naziv;
+public class Krug extends GeometrijskiLik {
+    //private String naziv;
     private double radijus;
 
-    //konstruktor
+    @Override
+    public double opseg() {
+        return 2 * radijus * Math.PI;
+    }
+
+    @Override
+    public double povrsina() {
+        return Math.pow(radijus, 2) * Math.PI;
+    }
+
+//konstruktor
 
     public Krug(String naziv, double radijus) {
-        this.naziv = naziv;
+        super(naziv);
         this.radijus = radijus;
     }
 
-    //getter
 
-    public String getNaziv() {
-        return naziv;
-    }
 
-    public double getRadijus() {
-        return radijus;
-    }
-
-    //setter
-
-    public void setRadijus(double radijus) {
-        if (radijus > 0.0) {
-            this.radijus = radijus;
-        }
-    }
-
-    public String prikazPodatakaKrug() {
-        return "Naziv: " + naziv + ", radijus: " + radijus ;
-    }
 }

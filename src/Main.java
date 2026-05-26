@@ -1,25 +1,32 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Trokut trokut1 = new Trokut( "trokut 1", 0, 0, 0);
-        Krug krug1 = new Krug( "krug 1", 0);
-        Pravokutnik pravokutnik1 =  new Pravokutnik( "pravokutnik 1", 0, 0);
+        //Implementirajte baznu klasu GeometrijskiLik, te refaktorirajte klase Pravokutnik, Trokut i Krug na način da odgovaraju specifikaciji zadatka.
 
-        trokut1.setStranica1(20); //postavljanje nove vrijednosti putem settera
-        trokut1.setStranica2(10);
-        trokut1.setStranica3(40);
-        krug1.setRadijus(15);
-        pravokutnik1.setStranica1(20);
-        pravokutnik1.setStranica2(40);
+        Ucilica ucilica = new Ucilica();
 
-        trokut1.prikazPodatakaTrokut();
-        System.out.println(trokut1.prikazPodatakaTrokut());
-        krug1.prikazPodatakaKrug();
-        System.out.println(krug1.prikazPodatakaKrug());
-        pravokutnik1.prikazPodatakaPravokutnik();
-        System.out.println(pravokutnik1.prikazPodatakaPravokutnik());
+        Trokut trokut1 = new Trokut( "zeleni", 9, 14, 8);
+        Krug krug1 = new Krug( "Veeliki", 5);
+        Pravokutnik pravokutnik1 =  new Pravokutnik( "plavi", 9, 14);
 
+//        System.out.println(krug1);
+//        System.out.println(pravokutnik1);
+//        System.out.println(trokut1);
+
+        ucilica.getLikovi().add(pravokutnik1);
+        ucilica.getLikovi().add(trokut1);
+        ucilica.getLikovi().add(krug1);
+
+        for (GeometrijskiLik gl : ucilica.getLikovi()){
+            System.out.println(gl);
+        }
+        System.out.println("Sortiranje i ispis");
+        Collections.sort(ucilica.getLikovi());
+        for (GeometrijskiLik gl : ucilica.getLikovi()){
+            System.out.println(gl);
+        }
     }
 }
